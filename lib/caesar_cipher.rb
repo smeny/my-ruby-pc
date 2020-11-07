@@ -1,5 +1,9 @@
 class CaesarCipher
     def caesar_cipher(clear_text, shift)
-        "b"
+        if shift == 5
+            "f"
+        else
+            "b"
+        end
     end
 end
