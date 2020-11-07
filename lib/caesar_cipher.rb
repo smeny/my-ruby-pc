@@ -4,7 +4,7 @@ class CaesarCipher
   ALPHABET_WRAP = 26
 
   def caesar_cipher(clear_text, shift)
-    result = ''
+    result = +''
     clear_text.each_char do |character|
       result << shift_within_alphabet(character, shift)
     end
