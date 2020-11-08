@@ -24,4 +24,8 @@ RSpec.describe '#caesar_cipher' do
   it 'wraps after uppercase letter Z' do
     expect(caesar_cipher.caesar_cipher('Z', 7)).to eq('G')
   end
+
+  it 'ciphers a full word' do
+    expect(caesar_cipher.caesar_cipher('What a string!', 5)).to eq('Bmfy f xywnsl!')
+  end
 end

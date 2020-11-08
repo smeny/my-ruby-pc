@@ -12,10 +12,12 @@ class CaesarCipher
   end
 
   def shift_within_alphabet(character, shift)
-    if character.ord >= 'a'.ord
+    if character >= 'a' && character <= 'z'
       shift_from_reference_letter(character, shift, 'a')
-    else
+    elsif character >= 'A' && character <= 'Z'
       shift_from_reference_letter(character, shift, 'A')
+    else
+      character
     end
   end
 
