@@ -12,8 +12,15 @@ class CaesarCipher
   end
 
   def shift_within_alphabet(character, shift)
-    shifted_ordinal = character.ord + shift
-    shifted_ordinal -= ALPHABET_WRAP if shifted_ordinal > 'z'.ord
-    shifted_ordinal.chr
+    if character.ord >= 'a'.ord
+      shift_from_reference_letter(character, shift, 'a')
+    else
+      shift_from_reference_letter(character, shift, 'A')
+    end
+  end
+
+  def shift_from_reference_letter(character, shift, reference)
+    wrapped_shift = (character.ord - reference.ord + shift) % ALPHABET_WRAP
+    (reference.ord + wrapped_shift).chr
   end
 end

@@ -20,4 +20,8 @@ RSpec.describe '#caesar_cipher' do
   it 'wraps after lowercase letter z' do
     expect(caesar_cipher.caesar_cipher('z', 3)).to eq('c')
   end
+
+  it 'wraps after uppercase letter Z' do
+    expect(caesar_cipher.caesar_cipher('Z', 7)).to eq('G')
+  end
 end
